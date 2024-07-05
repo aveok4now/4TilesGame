@@ -1,0 +1,25 @@
+---
+import AnimatedGridPattern from "../components/GridPattern";
+import { cn } from "../lib/utils";
+---
+
+<div
+	class="relative flex h-40 w-full items-center justify-center overflow-hidden rounded-lg bg-black p-20 md:shadow-xl border-b"
+>
+	<p
+		class="z-10 whitespace-pre-wrap text-center text-5xl font-medium tracking-tighter text-black dark:text-white"
+	>
+		Tiles Game
+	</p>
+	<AnimatedGridPattern
+		numSquares={100}
+		maxOpacity={0.5}
+		duration={3}
+		repeatDelay={1}
+		className={cn(
+			"[mask-image:radial-gradient(300px_circle_at_center,white,transparent)]",
+			"inset-x-0 inset-y-[-30%] h-[200%] skew-y-12"
+		)}
+		client:load
+	/>
+</div>

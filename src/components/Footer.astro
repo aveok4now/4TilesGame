@@ -1,0 +1,30 @@
+---
+import { AUTHOR_NAME, AUTHOR_GH_LINK } from "../config";
+import TypeWriter from "./TypeWriter";
+
+const today = new Date();
+
+const footerWords = ["Weather forecast", "CDG", "Sevastopol"]
+---
+
+<footer class="text-zinc-500 p-4 text-center">
+	&copy; {today.getFullYear()}
+	<a href={AUTHOR_GH_LINK}>{AUTHOR_NAME}</a>. All rights reserved.
+
+	<a
+		href={AUTHOR_GH_LINK}
+		class="flex justify-center items-start overflow-hidden h-10 my-1"
+	>
+		<code
+			class="leading-tight text-xs hover:text-black dark:hover:text-white transition-colors duration-700"
+		>
+			<TypeWriter
+				words={footerWords}
+				loop={false}
+				typeSpeed={100}
+				deleteSpeed={25}
+				client:visible
+			/>
+		</code>
+	</a>
+</footer>
