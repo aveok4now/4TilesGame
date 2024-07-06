@@ -9,7 +9,7 @@ import type { Tile, TileState } from "./models/Tile";
 
 export const CONFIG: GameConfig = {
 	cards: 8,
-	gameTimeSec: 90,
+	gameTimeSec: 60,
 	minGameTime: 20,
 	timeDecreaseValue: 10,
 };
