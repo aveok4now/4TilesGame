@@ -8,4 +8,19 @@ export class TimerService {
 	private static padZero(num: number): string {
 		return num < 10 ? `0${num}` : `${num}`;
 	}
+
+	static getTimeStyle(timerValue: number, timerStartTime: number) {
+		const styleMap = new Map([
+			[timerStartTime / 5, "text-red-300"],
+			[timerStartTime / 2, "text-yellow-300"],
+		]);
+
+		for (const [threshold, style] of styleMap) {
+			if (timerValue <= threshold) {
+				return style;
+			}
+		}
+
+		return "text-white";
+	}
 }

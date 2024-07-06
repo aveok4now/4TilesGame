@@ -1,6 +1,6 @@
 export interface GameConfig {
-	couples: number;
-	startTime: number;
-	minTime: number;
-	timeDecreasment: number;
+	cards: number;
+	gameTimeSec: number;
+	minGameTime: number;
+	timeDecreaseValue: number;
 }

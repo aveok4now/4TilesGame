@@ -5,7 +5,7 @@ export class GameService {
 		currentTime: number,
 		config: GameConfig
 	): number {
-		return Math.max(config.minTime, currentTime - config.timeDecreasment);
+		return Math.max(config.minGameTime, currentTime - config.timeDecreaseValue);
 	}
 
 	static isGameSolved(matchedCount: number, totalCouples: number): boolean {

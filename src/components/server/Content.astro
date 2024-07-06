@@ -6,24 +6,24 @@ import WordPullUp from "../client/magic/WordPullUp.tsx"
 ---
 
 <div
-	class="relative flex h-40 w-full items-center justify-center overflow-hidden rounded-lg bg-black p-20 md:shadow-xl shadow-sm shadow-white"
+	class="relative flex h-40 w-full  justify-center overflow-hidden rounded-lg bg-white dark:bg-black p-20 md:shadow-xl shadow-sm shadow-white"
 >
-
-	<WordPullUp
-	className="z-10 whitespace-pre-wrap text-center text-5xl font-medium tracking-tighter text-black dark:text-white"
-	words="Tiles Game"
-	client:visible
-/>
 	<AnimatedGridPattern
-		numSquares={100}
+		numSquares={200}
 		maxOpacity={0.5}
 		duration={3}
 		repeatDelay={1}
 		className={cn(
 			"[mask-image:radial-gradient(300px_circle_at_center,white,transparent)]",
-			"inset-x-0 inset-y-[-30%] h-[200%] skew-y-12"
+			"inset-x-0 inset-y-[-10%] h-[200%] skew-y-12"
 		)}
 		client:load
 	/>
 	<Meteors number={30} client:load />
+	<WordPullUp
+	delayMultiple={10}
+	className="z-10 whitespace-pre-wrap text-center text-5xl font-medium tracking-tighter text-black dark:text-white"
+	words="Tiles Game"
+	client:visible
+/>
 </div>

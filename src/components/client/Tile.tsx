@@ -10,13 +10,13 @@ export function Tile({ data, onClick }: TileProps) {
 	const { id, state, img } = data;
 
 	const baseWrapperStyles =
-		"rounded-md w-full aspect-square cursor-pointer bg-black flex items-center justify-center relative overflow-hidden border";
+		"rounded-md w-full aspect-square cursor-pointer bg-white dark:bg-black flex items-center justify-center relative overflow-hidden border border-black dark:border-white";
 
 	const stateStyles = cn(
 		state === "active" &&
-			"spin-around [transform:rotateY(180deg)] pointer-events-none",
-		state === "hidden" && "bg-white/20 pointer-events-none",
-		state === "closed" && "[transform:rotateY(0)]"
+			"[transform:rotateY(180deg)] pointer-events-none border-none",
+		state === "hidden" && "bg-toxic-p/10 pointer-events-none border-none",
+		state === "closed" && "[transform:rotateY(0deg)]"
 	);
 
 	const placeholderStateStyles = cn(
@@ -38,8 +38,9 @@ export function Tile({ data, onClick }: TileProps) {
 		<div onClick={handleClick} className={cn(baseWrapperStyles, stateStyles)}>
 			<img
 				className={cn(
-					"absolute transition-all duration-500 h-[40%] object-cover",
-					placeholderStateStyles
+					"absolute transition-all duration-75 h-[40%] object-cover ",
+					placeholderStateStyles,
+					state === "hidden" && "hidden"
 				)}
 				src={"favicon.svg"}
 				alt="closed tile"
@@ -47,7 +48,7 @@ export function Tile({ data, onClick }: TileProps) {
 
 			<img
 				className={cn(
-					"absolute transition-all duration-500 object-cover [transform:rotateY(180deg)]",
+					"absolute transition-all h-[100%] duration-200 object-cover [transform:rotateY(180deg)]",
 					imgStateStyles
 				)}
 				src={img}

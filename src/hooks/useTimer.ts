@@ -13,10 +13,10 @@ export function useTimer(onTimeEnd: () => void) {
 	}, []);
 
 	const refresh = useCallback(
-		(startTime: number) => {
+		(gameTimeSec: number) => {
 			isExpired.current = false;
 			clearInterval(timer.current);
-			setTimerValue(startTime);
+			setTimerValue(gameTimeSec);
 			timer.current = window.setInterval(() => {
 				setTotalTime((prev) => prev + 1);
 				setTimerValue((prev) => {
