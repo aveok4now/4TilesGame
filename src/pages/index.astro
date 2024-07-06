@@ -1,9 +1,12 @@
 ---
-import Layout from "../layouts/Layout.astro"
-import {SITE_TITLE} from "../config"
-import Content from "../components/Content.astro"
+import Layout from "../layouts/Layout.astro";
+import { SITE_TITLE, CONFIG } from "../config";
+import Content from "../components/Content.astro";
+import { GameScreen } from "../screens/GameScreen";
+
 ---
 
 <Layout title={SITE_TITLE}>
 	<Content />
+	<GameScreen config={CONFIG} client:load />
 </Layout>
