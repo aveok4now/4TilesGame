@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { BorderBeam } from "../components/BorderBeam";
 import { Statistics } from "../components/Statistics";
 import { TilesBoard } from "../components/TilesBoard";
@@ -6,6 +6,7 @@ import { tiles } from "../config";
 import { useTimer } from "../hooks/useTimer";
 import { cn } from "../lib/utils";
 import type { GameConfig } from "../models/GameConfig";
+import Result from "../screens/ResultsScreen";
 import { GameService } from "../services/GameService";
 import { TimerService } from "../services/TimerService";
 
@@ -39,6 +40,22 @@ export function GameScreen({ config }: GameScreenProps) {
 		setTimerStartTime(newStartTime);
 		timer.refresh(newStartTime);
 	}
+
+	const handleCloseResults = useCallback(async function () {
+		setResultShowed(false);
+		setTimerStartTime(config.startTime);
+		setMatchedCount(0);
+		setAttempt((prev) => prev + 1);
+
+		await new Promise((res) => setTimeout(res, 100));
+		setRound(1);
+		timer.clear();
+		timer.refresh(config.startTime);
+	}, []);
+
+	const results = useMemo(() => {
+		return { totalTime: timer.totalTime, lastRound: round };
+	}, [isResultShowed]);
 
 	const timeStyle = (() => {
 		if (timer.value <= timerStartTime / 5) return "text-red";
@@ -75,6 +92,12 @@ export function GameScreen({ config }: GameScreenProps) {
 					</Statistics>
 				)}
 			</div>
+
+			<Result
+				isOpen={isResultShowed}
+				close={handleCloseResults}
+				results={results}
+			/>
 		</>
 	);
 }
