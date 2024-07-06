@@ -66,7 +66,7 @@ export function GameScreen({ config }: GameScreenProps) {
 	return (
 		<>
 			<div
-				className="mx-auto md:w-full max-w-[35rem] sm:w-[95%] mt-10 min-h-screen overflow-hidden"
+				className="mx-auto md:w-full max-w-[35rem] sm:w-[95%]  overflow-hidden p-4"
 				id="gameScreen"
 			>
 				<div className="flex justify-between mb-4">

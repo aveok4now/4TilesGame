@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+const colors = require("tailwindcss/colors");
 export default {
 	content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
 	theme: {
@@ -48,6 +49,10 @@ export default {
 					},
 				},
 			},
+		},
+		colors: {
+			...colors,
+			"toxic-p": "#9c40ff",
 		},
 	},
 	plugins: [],
