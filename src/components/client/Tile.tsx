@@ -10,13 +10,13 @@ export function Tile({ data, onClick }: TileProps) {
 	const { id, state, img } = data;
 
 	const baseWrapperStyles =
-		"rounded-md w-full aspect-square cursor-pointer bg-white dark:bg-black flex items-center justify-center relative overflow-hidden border border-black dark:border-white";
+		"rounded-md w-full aspect-square cursor-pointer  flex items-center justify-center relative overflow-hidden border border-black dark:border-white";
 
 	const stateStyles = cn(
 		state === "active" &&
 			"[transform:rotateY(180deg)] pointer-events-none border-none",
 		state === "hidden" && "bg-toxic-p/10 pointer-events-none border-none",
-		state === "closed" && "[transform:rotateY(0deg)]"
+		state === "closed" && "[transform:rotateY(0deg)] bg-white dark:bg-black"
 	);
 
 	const placeholderStateStyles = cn(
