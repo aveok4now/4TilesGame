@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
-import { cn } from "../lib/utils";
-import type { GameConfig } from "../models/GameConfig";
-import type { Tile as TileModel } from "../models/Tile";
-import { GameService } from "../services/GameService";
-import { TileService } from "../services/TileService.ts";
+import { cn } from "../../lib/utils.ts";
+import type { GameConfig } from "../../models/GameConfig.ts";
+import type { Tile as TileModel } from "../../models/Tile.ts";
+import { GameService } from "../../services/GameService.ts";
+import { TileService } from "../../services/TileService.ts";
 import { Tile } from "./Tile.tsx";
 
 const HIDE_INCORRECT_TIME = 750;

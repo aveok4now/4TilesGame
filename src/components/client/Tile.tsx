@@ -1,5 +1,5 @@
-import { cn } from "../lib/utils";
-import type { Tile as TileModel } from "../models/Tile";
+import { cn } from "../../lib/utils";
+import type { Tile as TileModel } from "../../models/Tile";
 
 interface TileProps {
 	data: TileModel;

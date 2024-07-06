@@ -1,10 +1,10 @@
 import { useEffect, useRef } from "react";
-import BoxReveal from "../components/BoxReveal";
-import type { ConfettiRef } from "../components/Confetti";
-import Confetti from "../components/Confetti";
-import RetroGrid from "../components/RetroGrid";
-import ShimmerButton from "../components/ShimerButton";
-import WordPullUp from "../components/WordPullUp";
+import BoxReveal from "../components/client/magic/BoxReveal";
+import type { ConfettiRef } from "../components/client/magic/Confetti";
+import Confetti from "../components/client/magic/Confetti";
+import RetroGrid from "../components/client/magic/RetroGrid";
+import ShimmerButton from "../components/client/magic/ShimerButton";
+import WordPullUp from "../components/client/magic/WordPullUp";
 import { cn } from "../lib/utils";
 import type { GameResults } from "../models/GameResults";
 import { RecordService } from "../services/RecordService";
