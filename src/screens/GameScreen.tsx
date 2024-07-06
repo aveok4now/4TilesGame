@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
-import { BorderBeam } from "../components/BorderBeam";
-import { Statistics } from "../components/Statistics";
-import { TilesBoard } from "../components/TilesBoard";
+import { BorderBeam } from "../components/client/magic/BorderBeam";
+import { Statistics } from "../components/client/Statistics";
+import { TilesBoard } from "../components/client/TilesBoard";
 import { tiles } from "../config";
 import { useTimer } from "../hooks/useTimer";
 import { cn } from "../lib/utils";

@@ -1,5 +1,5 @@
-import { cn } from "../lib/utils";
-import LinearGradient from "./LinearGradient";
+import { cn } from "../../lib/utils";
+import LinearGradient from "./magic/LinearGradient";
 
 interface StatisticsProps {
 	children: React.ReactNode;
