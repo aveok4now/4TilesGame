@@ -1,12 +1,12 @@
 ---
 import AnimatedGridPattern from "../client/magic/GridPattern.tsx";
 import { cn } from "../../lib/utils.ts";
-import Meteors from "../client/magic/Meteors.tsx"
-import WordPullUp from "../client/magic/WordPullUp.tsx"
+import Meteors from "../client/magic/Meteors.tsx";
+import WordPullUp from "../client/magic/WordPullUp.tsx";
 ---
 
 <div
-	class="relative flex h-40 w-full  justify-center overflow-hidden rounded-lg bg-white dark:bg-black p-20 md:shadow-xl shadow-sm shadow-white"
+	class="relative flex h-40 w-full justify-center overflow-hidden rounded-lg bg-white dark:bg-black p-20 md:shadow-xl shadow-sm shadow-white"
 >
 	<AnimatedGridPattern
 		numSquares={200}
@@ -21,9 +21,9 @@ import WordPullUp from "../client/magic/WordPullUp.tsx"
 	/>
 	<Meteors number={30} client:load />
 	<WordPullUp
-	delayMultiple={10}
-	className="z-10 whitespace-pre-wrap text-center text-5xl font-medium tracking-tighter text-black dark:text-white"
-	words="Tiles Game"
-	client:visible
-/>
+		delayMultiple={10}
+		className="z-10 whitespace-pre-wrap text-center text-4xl lg:text-5xl font-medium tracking-tighter text-black dark:text-white"
+		words="Tiles Game"
+		client:visible
+	/>
 </div>
