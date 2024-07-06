@@ -19,7 +19,7 @@ interface GameScreenProps {
 
 export function GameScreen({ config }: GameScreenProps) {
 	const [round, setRound] = useState(1);
-	const [timerStartTime, setTimerStartTime] = useState(config.startTime);
+	const [timerStartTime, setTimerStartTime] = useState(config.gameTimeSec);
 	const [matchedCount, setMatchedCount] = useState(0);
 	const [isResultShowed, setResultShowed] = useState(false);
 	const [attempt, setAttempt] = useState(1);
@@ -31,9 +31,9 @@ export function GameScreen({ config }: GameScreenProps) {
 	});
 
 	useEffect(() => {
-		timer.refresh(config.startTime);
+		timer.refresh(config.gameTimeSec);
 		setRoundPassed(false);
-	}, [config.startTime]);
+	}, [config.gameTimeSec]);
 
 	const handleSolve = useCallback(() => {
 		if (timer.isExpired) return;
@@ -56,14 +56,14 @@ export function GameScreen({ config }: GameScreenProps) {
 
 	const handleCloseResults = useCallback(async function () {
 		setResultShowed(false);
-		setTimerStartTime(config.startTime);
+		setTimerStartTime(config.gameTimeSec);
 		setMatchedCount(0);
 		setAttempt((prev) => prev + 1);
 
 		await new Promise((res) => setTimeout(res, 100));
 		setRound(1);
 		timer.clear();
-		timer.refresh(config.startTime);
+		timer.refresh(config.gameTimeSec);
 	}, []);
 
 	const results = useMemo(() => {
@@ -102,7 +102,7 @@ export function GameScreen({ config }: GameScreenProps) {
 					attempt={attempt}
 				/>
 				<Statistics className="mt-4 text-white">
-					{matchedCount + " / " + config.couples}
+					{matchedCount + " / " + config.cards}
 				</Statistics>
 			</div>
 

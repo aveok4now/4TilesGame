@@ -5,7 +5,7 @@ export class TileService {
 	static getPreparedTiles(tiles: Tile[], config: GameConfig): Tile[] {
 		return tiles
 			.sort(() => Math.random() - 0.5)
-			.slice(0, config.couples)
+			.slice(0, config.cards)
 			.reduce((acc: Tile[], tile) => {
 				const duplicate = { ...tile, id: tile.id + "_s" };
 				return [...acc, tile, duplicate];

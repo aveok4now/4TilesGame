@@ -39,7 +39,7 @@ export function TilesBoard({
 
 	function increaseMatchedCount() {
 		setMatchedCount((prev) => prev + 1);
-		if (GameService.isGameSolved(matchedCount + 1, config.couples)) {
+		if (GameService.isGameSolved(matchedCount + 1, config.cards)) {
 			new Promise<void>((resolve) => {
 				setTiles((prev) => prev.map((tile) => ({ ...tile, state: "closed" })));
 				setTimeout(() => {
@@ -106,7 +106,7 @@ export function TilesBoard({
 	const colsClassname = {
 		2: "grid-cols-2",
 		8: "grid-cols-4",
-	}[config.couples];
+	}[config.cards];
 
 	const boardClassname = cn(
 		"grid [justify-content:space-between] gap-[.5rem]",
