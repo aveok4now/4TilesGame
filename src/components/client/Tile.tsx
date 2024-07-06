@@ -10,10 +10,11 @@ export function Tile({ data, onClick }: TileProps) {
 	const { id, state, img } = data;
 
 	const baseWrapperStyles =
-		"rounded-md w-full aspect-square cursor-pointer bg-black flex items-center justify-center relative overflow-hidden border ";
+		"rounded-md w-full aspect-square cursor-pointer bg-white dark:bg-black flex items-center justify-center relative overflow-hidden border border-black dark:border-white";
 
 	const stateStyles = cn(
-		state === "active" && "[transform:rotateY(180deg)] pointer-events-none",
+		state === "active" &&
+			"[transform:rotateY(180deg)] pointer-events-none border-none",
 		state === "hidden" && "bg-toxic-p/10 pointer-events-none border-none",
 		state === "closed" && "[transform:rotateY(0deg)]"
 	);
@@ -37,7 +38,7 @@ export function Tile({ data, onClick }: TileProps) {
 		<div onClick={handleClick} className={cn(baseWrapperStyles, stateStyles)}>
 			<img
 				className={cn(
-					"absolute transition-all duration-75 h-[40%] object-cover",
+					"absolute transition-all duration-75 h-[40%] object-cover ",
 					placeholderStateStyles,
 					state === "hidden" && "hidden"
 				)}

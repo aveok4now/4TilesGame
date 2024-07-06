@@ -6,6 +6,10 @@ import { useEffect, useState } from "react";
 
 import { cn } from "../../../lib/utils";
 
+const theme = window.matchMedia("(prefers-color-scheme: dark)").matches
+	? "dark"
+	: "light";
+
 interface Sparkle {
 	id: string;
 	x: string;
@@ -63,7 +67,10 @@ interface SparklesTextProps {
 
 const SparklesText: React.FC<SparklesTextProps> = ({
 	text,
-	colors = { first: "#A07CFE", second: "#FE8FB5" },
+	colors = {
+		first: theme === "dark" ? "#A07CFE" : "#7957CE",
+		second: theme === "dark" ? "#FE8FB5" : "#EF3D7B",
+	},
 	className,
 	sparklesCount = 10,
 	...props

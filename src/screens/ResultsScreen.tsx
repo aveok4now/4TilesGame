@@ -17,7 +17,8 @@ interface ResultProps {
 }
 
 export default function ResultsScreen({ results, isOpen, close }: ResultProps) {
-	const baseStyle = "bg-black z-50 absolute overflow-x-hidden w-full bottom-0";
+	const baseStyle =
+		"bg-purple-300 dark:bg-black z-50 absolute overflow-x-hidden w-full bottom-0";
 	const stateStyle = isOpen ? "h-screen" : "h-0";
 	const confettiRef = useRef<ConfettiRef>(null);
 	const isNewRecord = RecordService.isRecord(results);
@@ -38,7 +39,7 @@ export default function ResultsScreen({ results, isOpen, close }: ResultProps) {
 
 	const boxContent = (
 		<>
-			<div className="pointer-events-none z-20 whitespace-pre-wrap bg-gradient-to-b from-[#ffd319] via-[#ff2975] to-[#8c1eff] bg-clip-text text-center text-4xl font-bold leading-none text-transparent">
+			<div className="pointer-events-none z-20 whitespace-pre-wrap bg-gradient-to-b from-[#8c1eff] dark:from-[#ffd319] via-[#ff2975] to-[#8c1eff] bg-clip-text text-center text-4xl font-bold leading-none text-transparent">
 				<ResultMessage results={results} />
 				<ResultData results={results}>Your result:</ResultData>
 			</div>

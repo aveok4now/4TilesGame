@@ -9,7 +9,7 @@ import type { Tile, TileState } from "./models/Tile";
 
 export const CONFIG: GameConfig = {
 	couples: 8,
-	startTime: 60,
+	startTime: 90,
 	minTime: 20,
 	timeDecreasment: 10,
 };

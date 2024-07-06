@@ -19,12 +19,12 @@ function ResultData({ results, children }: ResultDataProps) {
 
 			<WordPullUp
 				words={`Max round: ${results.lastRound}`}
-				className="text-white leading-[3rem]"
+				className="text-black/90 dark:text-white leading-[3rem]"
 			/>
 
 			<WordPullUp
 				words={`Max time: ${TimerService.getFormattedTime(results.totalTime)}`}
-				className="text-white leading-[3rem] mb-4"
+				className="text-black/90 dark:text-white leading-[3rem] mb-4"
 			/>
 		</>
 	);
