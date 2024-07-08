@@ -3,8 +3,10 @@ import { BorderBeam } from "../components/client/magic/BorderBeam";
 import Confetti, {
 	type ConfettiRef,
 } from "../components/client/magic/Confetti";
+import { MatchProgress } from "../components/client/MatchProgress";
 import { Statistics } from "../components/client/Statistics";
 import { TilesBoard } from "../components/client/TilesBoard";
+import { TimerDisplay } from "../components/client/TimerDisplay";
 import { tiles } from "../config";
 import { useTimer } from "../hooks/useTimer";
 import { cn } from "../lib/utils";
@@ -70,7 +72,7 @@ export function GameScreen({ config }: GameScreenProps) {
 		return { totalTime: timer.totalTime, lastRound: round };
 	}, [isResultShowed]);
 
-	const timeStyle = TimerService.getTimeStyle(timer.value, timerStartTime);
+	const { textStyle } = TimerService.getStyles(timer.value, timerStartTime);
 
 	return (
 		<>
@@ -81,14 +83,21 @@ export function GameScreen({ config }: GameScreenProps) {
 				/>
 			)}
 			<div
-				className="mx-auto md:w-full max-w-[35rem] sm:w-[95%]  overflow-hidden p-4"
+				className="mx-auto md:w-full max-w-[35rem] sm:w-[95%] overflow-hidden p-4"
 				id="gameScreen"
 			>
-				<div className="flex justify-between mb-4">
-					<Statistics className="[width:calc(50%-.25rem)] text-white">
+				<div className="flex items-center mb-2 gap-x-2">
+					<Statistics className="w-[75%] md:[width:calc(50%-.25rem)] text-white">
 						{"Round " + round}
 					</Statistics>
-					<Statistics className={cn("[width:calc(50%-.25rem)]", timeStyle)}>
+
+					<div className={cn("items-center mx-auto flex md:hidden")}>
+						<TimerDisplay time={timer.value} startTime={timerStartTime} />
+					</div>
+
+					<Statistics
+						className={cn("[width:calc(50%-.25rem)] hidden md:flex", textStyle)}
+					>
 						{TimerService.getFormattedTime(timer.value)}
 						<BorderBeam size={250} duration={12} delay={9} />
 					</Statistics>
@@ -101,9 +110,8 @@ export function GameScreen({ config }: GameScreenProps) {
 					setMatchedCount={setMatchedCount}
 					attempt={attempt}
 				/>
-				<Statistics className="mt-4 text-white">
-					{matchedCount + " / " + config.cards}
-				</Statistics>
+
+				<MatchProgress matchedCount={matchedCount} totalCards={config.cards} />
 			</div>
 
 			{timer.isExpired && (
