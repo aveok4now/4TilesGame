@@ -9,7 +9,7 @@ function ResultMessage({ results }: { results: GameResults }) {
 
 	const renderWordPullUp = (words: string) => (
 		<WordPullUp
-			className="mb-12 text-4xl font-bold tracking-[-0.02em] md:text-7xl md:leading-[5rem]"
+			className="mb-4 md:mb-12 text-4xl font-bold tracking-[-0.02em] md:text-7xl md:leading-[5rem]"
 			words={words}
 		/>
 	);

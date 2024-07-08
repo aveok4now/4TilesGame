@@ -3,10 +3,9 @@ import Layout from "../layouts/Layout.astro";
 import { SITE_TITLE, CONFIG } from "../config.ts";
 import Content from "../components/server/Content.astro";
 import { GameScreen } from "../screens/GameScreen";
-
 ---
 
 <Layout title={SITE_TITLE}>
 	<Content />
-	<GameScreen config={CONFIG} client:only />
+	<GameScreen config={CONFIG} client:only="react" />
 </Layout>

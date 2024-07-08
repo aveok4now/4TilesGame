@@ -39,13 +39,13 @@ export default function ResultsScreen({ results, isOpen, close }: ResultProps) {
 
 	const boxContent = (
 		<>
-			<div className="pointer-events-none z-20 whitespace-pre-wrap bg-gradient-to-b from-[#8c1eff] dark:from-[#ffd319] via-[#ff2975] to-[#8c1eff] bg-clip-text text-center text-4xl font-bold leading-none text-transparent">
+			<div className="pointer-events-none z-20 whitespace-nowrap md:whitespace-pre-wrap bg-gradient-to-b from-[#8c1eff] dark:from-[#ffd319] via-[#ff2975] to-[#8c1eff] bg-clip-text text-center text-3xl font-bold leading-none text-transparent">
 				<ResultMessage results={results} />
 				<ResultData results={results}>Your result:</ResultData>
 			</div>
 			<div className="flex items-center justify-center">
 				<ShimmerButton
-					className="shadow-xl w-64 h-16"
+					className="shadow-xl w-48 h-12"
 					onClick={handlePlayAgainClick}
 				>
 					<span className="whitespace-pre-wrap text-center text-xl font-regular leading-none tracking-tight text-white dark:from-white dark:to-slate-900/50 lg:text-lg">
