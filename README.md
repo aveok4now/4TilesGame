@@ -1,47 +1,96 @@
-# Astro Starter Kit: Minimal
+# Tiles Game
 
-```sh
-npm create astro@latest -- --template minimal
-```
+[Live Demo](https://tiles-game-ok4now.vercel.app/)
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/minimal)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/minimal)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/minimal/devcontainer.json)
+## Project Description
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+Tiles Game is a classic memory matching game where the objective is to find pairs of tiles with the same color. The game board consists of tiles that are initially covered. The player needs to uncover two tiles at a time to find matching pairs. The game continues until all pairs are found and all tiles are uncovered.
 
-## 🚀 Project Structure
+## Tech Stack
 
-Inside of your Astro project, you'll see the following folders and files:
+- **Framework**: [Astro](https://astro.build/)
+- **Frontend**: [React](https://react.dev/)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
 
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+## Features
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+1. **Game Board**: The game board consists of tiles arranged in a 4x4 grid by default.
+   - Each pair of tiles has the same image.
+   - All tiles are initially covered, hiding their colors/images.
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+2. **Gameplay**: The game is played in rounds.
+   - In each round, the player selects two tiles to uncover.
+   - If the selected tiles have the same color, they remain uncovered.
+   - If the selected tiles have different colors, they are covered again.
+   - The game ends when all pairs are found and all tiles are uncovered.
 
-Any static assets, like images, can be placed in the `public/` directory.
+## Browsers
 
-## 🧞 Commands
+This application is compatible with the latest versions of Chrome, Safari, and Firefox.
 
-All commands are run from the root of the project, from a terminal:
+## Installation and Setup
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+### Prerequisites
 
-## 👀 Want to learn more?
+Make sure you have [Node.js](https://nodejs.org/) installed on your machine.
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+### Development
+
+To run the project in development mode:
+
+1. Clone the repository:
+    ```bash
+    git clone https://github.com/yourusername/tiles-game.git
+    ```
+2. Navigate to the project directory:
+    ```bash
+    cd tiles-game
+    ```
+3. Install dependencies:
+    ```bash
+    npm install
+    ```
+4. Start the development server:
+    ```bash
+    npm run dev
+    ```
+5. Open your browser and go to `http://localhost:3000`.
+
+### Build
+
+To build the project for production:
+
+1. Run the build command:
+    ```bash
+    npm run build
+    ```
+2. The built files will be in the `dist` directory. You can deploy these files to any static hosting service.
+
+## Deployment
+
+The application is deployed using GitHub Pages. To deploy the application:
+
+1. Build the project:
+    ```bash
+    npm run build
+    ```
+2. Deploy the `dist` directory to GitHub Pages:
+    ```bash
+    npm run deploy
+    ```
+
+## Contributing
+
+Feel free to fork the project and submit pull requests. For major changes, please open an issue first to discuss what you would like to change.
+
+## License
+
+This project is licensed under the MIT License.
+
+---
+
+For more information on how to use Tailwind CSS with React and Astro, please refer to their respective documentation:
+
+- [Tailwind CSS](https://tailwindcss.com/docs)
+- [React](https://reactjs.org/docs/getting-started.html)
+- [Astro](https://docs.astro.build/)
