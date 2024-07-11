@@ -40,7 +40,7 @@ To run the project in development mode:
 
 1. Clone the repository:
     ```bash
-    git clone https://github.com/yourusername/tiles-game.git
+    git clone https://github.com/aveok4now/4tilesgame.git
     ```
 2. Navigate to the project directory:
     ```bash
