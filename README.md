@@ -1,6 +1,6 @@
 # Tiles Game
 
-[Live Demo](https://tiles-game-ok4now.vercel.app/)
+[Live Demo](https://tiles4now-game.vercel.app/)
 
 ## Project Description
 
@@ -44,7 +44,7 @@ To run the project in development mode:
     ```
 2. Navigate to the project directory:
     ```bash
-    cd tiles-game
+    cd 4tilesgame
     ```
 3. Install dependencies:
     ```bash
